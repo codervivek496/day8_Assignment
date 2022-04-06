@@ -1,13 +1,25 @@
 #! /bin/bash -x
-read -p "Enter the unit to convert:-" unit
 read -p "Enter 1 for Feet to Inch /nEnter 2 for Feet to Meter /nEnter 3 for Inch to Feet and /nEnter 4 for Meter to feet" num1
 case $num1 in
+
 	1)
-	echo "Feet to Inch" $(( unit * 12 ));;
+	read -p "Enter the unit to convert:-" unit
+	echo "Feet to Inch"
+	fti=`expr $unit \* 12`
+	echo $fti "inch";;
 	2)
-	echo "Inch to Feet" $(( Unit / 12 ));;
+	read -p "Enter the unit to convert:-" unit
+	echo "Inch to Feet"
+	itf=$`awk "BEGIN{print $unit / 12}"`
+	echo $itf "feet";;
 	3)
-	echo "Feet to Meter" $(( unit / 3.28084 ));;
+	read -p "Enter the unit to convert:-" unit
+	echo "Feet to Meter"
+	ftm=$`awk "BEGIN{print $unit / 3.28084}"`
+	echo $ftm "meter";;
 	4)
-	echo "Meter to Feet" $(( unit * 3.28084 ));;
+	read -p "Enter the unit to convert:-" unit
+	echo "Meter to Feet"
+	mtf=$`awk "BEGIN{print $unit * 3.28084}"`
+	echo $mtf "feet";;
 esac
